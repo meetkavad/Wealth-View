@@ -1,8 +1,6 @@
 # Wealth-View
 software engineering project (SEM-4)
 
-## Abstract :-
-
 In an era of increasing financial complexity and individualized needs, the demand for personalized financial planning tools has surged. This project aims to develop a comprehensive Personalized Financial Planner (PFP) that leverages cutting-edge technology to provide tailored financial guidance and recommendations to individuals seeking to manage their finances effectively. 
 
 The PFP will integrate various features to cater to the diverse financial needs and goals of users. PFP aims to simplify the process by analyzing user-specific financial data and providing personalized insights across budgeting, savings, investments, and goal planning. 
