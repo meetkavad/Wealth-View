@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import LandingPage from "./components/LandingPage";
+import Navigation from "./components/Navigation";
+import { colors } from "./values/colors";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <div
+            style={{
+                backgroundColor: colors.black,
+                color: "#EFFFFB",
+                width: "100vw",
+                height: "100vh",
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Navigation />
+            <LandingPage />
+        </div>
+    );
 }
 
 export default App;
