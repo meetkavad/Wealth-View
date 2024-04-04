@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { colors } from "../values/colors";
+import { Link } from "react-router-dom";
 
 function Navigation() {
     const linkStyle = {
@@ -19,6 +20,8 @@ function Navigation() {
         >
             <Container style={{ marginTop: "2rem" }}>
                 <Navbar.Brand
+                    as={Link}
+                    to="/"
                     style={{
                         fontFamily: "MuseoModerno",
                         fontWeight: "600",
@@ -30,30 +33,28 @@ function Navigation() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav
-                        className="m-auto"
-                        variant="tabs"
-                        defaultActiveKey="/home"
-                    >
+                    <Nav className="m-auto" variant="tabs">
                         <Nav.Link
-                            href="#home"
+                            as={Link}
                             style={{ ...linkStyle, fontWeight: "400" }}
+                            to="/about_us"
                         >
-                            Home
+                            About Us
                         </Nav.Link>
                         <Nav.Link
-                            eventKey="link"
+                            as={Link}
                             style={{ ...linkStyle, fontWeight: "400" }}
+                            to="/personal_info"
                         >
                             Link
                         </Nav.Link>
                         <Nav.Link
-                            eventKey="login/signup"
                             style={{
                                 ...linkStyle,
                                 marginRight: "0",
                                 fontWeight: "400",
                             }}
+                            href="#"
                         >
                             Login/Signup
                         </Nav.Link>

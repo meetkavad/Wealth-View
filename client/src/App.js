@@ -1,21 +1,30 @@
+import logo from "./logo.svg";
 import "./App.css";
-import LandingPage from "./components/LandingPage";
 import Navigation from "./components/Navigation";
-import { colors } from "./values/colors";
+import LandingPage from "./components/LandingPage";
+import PersonalInfo from "./components/PersonalInfo";
+import AboutUs from "./components/AboutUs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div
-            style={{
-                backgroundColor: colors.black,
-                color: "#EFFFFB",
-                width: "100vw",
-                height: "100vh",
-            }}
-        >
-            <Navigation />
-            <LandingPage />
-        </div>
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Navigation />
+                                <LandingPage />
+                            </>
+                        }
+                    />
+                    <Route path="/personal_info" element={<PersonalInfo />} />
+                    <Route path="/about_us" element={<AboutUs />} />
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
 

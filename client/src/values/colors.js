@@ -4,8 +4,8 @@ export const colors = {
     // blue: "#31363F",
     // white: "#EEEEEE",
 
-    black: "#0A1128",
+    black: "#F3F8FF",
     green: "#ff5e6c",
-    blue: "#49111C",
-    white: "#8DDBE0",
+    blue: "#E26EE5",
+    white: "#7E30E1",
 };
