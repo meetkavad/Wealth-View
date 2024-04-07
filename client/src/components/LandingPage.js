@@ -1,6 +1,5 @@
 import React from "react";
 import { colors } from "../values/colors";
-import Navigation from "./Navigation";
 function LandingPage() {
     const styles = {
         txt: {
@@ -9,10 +8,7 @@ function LandingPage() {
             fontSize: "4rem",
             marginTop: "1rem",
             marginBottom: "0.5rem", // Added margin bottom for consistency
-            color: colors.white,
-        },
-        making_green: {
-            color: colors.green,
+            color: colors.purple,
         },
     };
 
@@ -25,7 +21,7 @@ function LandingPage() {
                     </h1>
                     <h1 style={styles.txt}>
                         One{" "}
-                        <span style={{ ...styles.txt, ...styles.making_green }}>
+                        <span style={{ ...styles.txt, color: colors.orange }}>
                             Personalized{" "}
                         </span>
                         plan

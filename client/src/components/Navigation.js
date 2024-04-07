@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 
 function Navigation() {
     const linkStyle = {
-        fontWeight: "600",
+        fontWeight: "400",
         fontSize: "20px",
         fontFamily: "MuseoModerno",
-        color: colors.white,
+        color: colors.purple,
         marginRight: "5rem",
     };
 
     return (
         <Navbar
             expand="lg"
-            style={{ backgroundColor: colors.blue }}
+            style={{ backgroundColor: colors.darkPink }}
             variant="dark"
         >
             <Container style={{ marginTop: "2rem" }}>
@@ -26,7 +26,7 @@ function Navigation() {
                         fontFamily: "MuseoModerno",
                         fontWeight: "600",
                         fontSize: "30px",
-                        color: colors.white,
+                        color: colors.purple,
                     }}
                 >
                     Wealth View
@@ -34,27 +34,23 @@ function Navigation() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto" variant="tabs">
-                        <Nav.Link
-                            as={Link}
-                            style={{ ...linkStyle, fontWeight: "400" }}
-                            to="/about_us"
-                        >
+                        <Nav.Link as={Link} style={linkStyle} to="/about_us">
                             About Us
                         </Nav.Link>
                         <Nav.Link
                             as={Link}
-                            style={{ ...linkStyle, fontWeight: "400" }}
+                            style={linkStyle}
                             to="/personal_info"
                         >
                             Link
                         </Nav.Link>
                         <Nav.Link
+                            as={Link}
                             style={{
                                 ...linkStyle,
                                 marginRight: "0",
-                                fontWeight: "400",
                             }}
-                            href="#"
+                            to="/login_signup"
                         >
                             Login/Signup
                         </Nav.Link>
