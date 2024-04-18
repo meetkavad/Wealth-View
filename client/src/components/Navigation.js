@@ -15,7 +15,7 @@ function Navigation() {
     return (
         <Navbar
             expand="lg"
-            style={{ backgroundColor: colors.darkPink }}
+            style={{backgroundColor: colors.darkPink }}
             variant="dark"
         >
             <Container style={{ marginTop: "2rem" }}>
@@ -40,7 +40,7 @@ function Navigation() {
                         <Nav.Link
                             as={Link}
                             style={linkStyle}
-                            to="/personal_info"
+                            to="/dashboard"
                         >
                             Link
                         </Nav.Link>

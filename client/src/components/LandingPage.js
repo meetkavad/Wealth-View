@@ -14,7 +14,7 @@ function LandingPage() {
 
     return (
         <>
-            <div style={{ height: "85vh", overflow: "hidden" }}>
+            <div style={{ height: "85vh", overflow:"hidden"}}>
                 <div style={{ marginTop: "10rem", marginLeft: "8rem" }}>
                     <h1 style={styles.txt}>
                         Empowering your financial journey,

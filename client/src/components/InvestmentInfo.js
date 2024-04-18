@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { colors } from "../values/colors";
 import { Col, Form, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function PersonalInfo() {
+function InvestmentInfo() {
     const navigate = useNavigate();
     const linkStyle = {
         upperDiv: {
@@ -54,7 +54,7 @@ function PersonalInfo() {
 
     return (
         <div style={linkStyle.upperDiv}>
-            <h1 style={linkStyle.txt_style}>Personal Info</h1>
+            <h1 style={linkStyle.txt_style}>Investment Info</h1>
             <div style={linkStyle.lowerDiv}>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group as={Row} className="mb-3">
@@ -153,4 +153,4 @@ function PersonalInfo() {
     );
 }
 
-export default PersonalInfo;
+export default InvestmentInfo;

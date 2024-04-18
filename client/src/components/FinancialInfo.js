@@ -26,11 +26,11 @@ function FinancialInfo() {
         },
         incomePart: {
             marginBottom: "5px",
-            flexGrow: "1",
+            flexGrow: "0.5",
         },
         expensePart: {
             marginBottom: "5px",
-            flexGrow: "2",
+            flexGrow: "3",
         },
         txt_style: {
             fontFamily: "Montserrat Alternates",
@@ -242,10 +242,12 @@ function FinancialInfo() {
                             style={{ marginTop: "20px" }}
                             variant="info"
                             onClick={() => {
-                                navigate("/financial_info");
+                                navigate(
+                                    "/personal_info/financial_info/AssetsLiability_info"
+                                );
                             }}
                         >
-                            Generate Report
+                            Next
                         </Button>
                     </Form>
                 </div>
@@ -255,97 +257,3 @@ function FinancialInfo() {
 }
 
 export default FinancialInfo;
-
-/* 
-<Form onSubmit={handleSubmit}>
-    <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">
-            Name
-        </Form.Label>
-        <Col sm="10">
-            <Form.Control
-                type="text"
-                placeholder="Enter name"
-                value={formData.name}
-                id="name"
-                onChange={handleChange}
-            />
-        </Col>
-    </Form.Group>
-
-    <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">
-            Age
-        </Form.Label>
-        <Col sm="10">
-            <Form.Control
-                type="number"
-                placeholder="Enter age"
-                value={formData.age}
-                id="age"
-                onChange={handleChange}
-            />
-        </Col>
-    </Form.Group>
-
-    <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">
-            Gender
-        </Form.Label>
-        <Col sm="10">
-            <Form.Control
-                as="select"
-                placeholder="Password"
-                value={formData.gender}
-                id="gender"
-                onChange={handleChange}
-            >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </Form.Control>
-        </Col>
-    </Form.Group>
-    <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">
-            Marital Status
-        </Form.Label>
-        <Col sm="10">
-            <Form.Control
-                as="select"
-                placeholder="Password"
-                value={formData.maritalStatus}
-                id="maritalStatus"
-                onChange={handleChange}
-            >
-                <option value="single">Single</option>
-                <option value="married">Married</option>
-                <option value="divorced">Divorced</option>
-                <option value="widowed">Widowed</option>
-            </Form.Control>
-        </Col>
-    </Form.Group>
-    <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm="2">
-            No. of Dependents
-        </Form.Label>
-        <Col sm="10">
-            <Form.Control
-                type="number"
-                placeholder="Enter number of dependents"
-                value={formData.numDependents}
-                id="numDependents"
-                onChange={handleChange}
-            />
-        </Col>
-    </Form.Group>
-    <Button
-        type="submit"
-        style={{ marginTop: "20px" }}
-        variant="info"
-        onClick={() => {
-            navigate("/financial_info");
-        }}
-    >
-        Next
-    </Button>
-</Form>; */
