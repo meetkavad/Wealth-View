@@ -2,7 +2,7 @@ const UserModel = require("../Model/UserModel");
 const bcrypt = require("bcrypt"); // for hashing codes
 const jwt = require("jsonwebtoken");
 const transporter = require("../Component/transporter");
-const generateCode = require("../components/code_generator");
+const generateCode = require("../Component/codeGenerator");
 require("dotenv").config();
 
 // user login :

@@ -1,0 +1,50 @@
+short-term and long-term goals
+current finance strengths and weaknesses
+
+asses user's current financial status (questionarie) ---->  financial plan () 
+
+sections : 
+assets and liabilites  |    goals   |    plan    | 
+
+amount : 5000
+goal : 40000 in an 6 months
+risk : lower
+
+40000/12 = 6668
+
+try saving 6668 - 5000 = 1668 every month....
+
+what i really want ? 
+get all the financial data of user ....
+provide all this things as a financial plan : 
+1.summary of goals 
+2.Debt Management Suggestions
+3.Investment Recommendations
+4.Savings Strategies
+5.Retirement Planning Suggestions
+6.Tax Planning Strategies
+7.Insurance Recommendations
+8.Estate Planning Suggestions
+
+
+
+
+
+
+1. questionarie for user financial and related information     
+>> different questionaries for different type of data
+>> need to prepare appropriate questions
+
+2. expense traking 
+>> name category amount date 
+>> set limit to each category
+
+3. goal setting
+>> goal : [name , money , timeline , description]
+>> plan [ excel sheet ]
+>> let the ai generate a plan for your goals
+
+4. personalized Recommendations : 
+>> based on user data
+>> store useful links(blogs , articles) on database only and let the ai select the appropriate link
+>> 

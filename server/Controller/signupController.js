@@ -1,4 +1,4 @@
-const UserModel = require("../Model/userModel.js");
+const UserModel = require("../Model/UserModel.js");
 const bcrypt = require("bcrypt"); // for hashing password
 const jwt = require("jsonwebtoken");
 const transporter = require("../Component/transporter.js");
@@ -60,7 +60,7 @@ const PostUserSignup = async (req, res) => {
 
     //creating json web token :
     const jwt_token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "30m",
+      expiresIn: "24h",
     });
 
     // generating code for email verification :
@@ -129,7 +129,7 @@ const PostEmailVerification = async (req, res) => {
   user = await UserModel.findById(user_id);
 
   // comparing email_code :`
-  if (email_code === user.email.verification_code) {
+  if (email_code === user.email.verificationCode) {
     user.email.is_verified = true;
     await user.save();
     res.status(200).json({
