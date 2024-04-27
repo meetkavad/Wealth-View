@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
       required: true,
-      unique: true,
     },
     email: {
       address: {
@@ -34,21 +33,17 @@ const userSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      required: true,
     },
     dob: {
       type: Date,
-      required: true,
       default: new Date("1990-01-01"),
     },
     marital_status: {
       type: String,
-      required: true,
       default: "Single",
     },
     no_of_dependents: {
       type: Number,
-      required: true,
       default: 0,
     },
   },

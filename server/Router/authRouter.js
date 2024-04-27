@@ -14,11 +14,6 @@ const {
 } = require("../Controller/loginController");
 
 const authRouter = express.Router();
-authRouter.get("/", (req, res) => {
-  res.json({
-    msg: "auth router",
-  });
-});
 
 authRouter.route("/checkusername").post(checkUsername);
 authRouter.route("/signup").post(PostUserSignup);

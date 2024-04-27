@@ -7,10 +7,10 @@ require("dotenv").config();
 
 // user login :
 const PostUserLogin = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   //checking for user in database :
-  const user = await UserModel.findOne({ username });
+  const user = await UserModel.findOne({ "email.address": email });
   if (!user) {
     return res.status(404).json({
       msg: "User not found",
@@ -50,7 +50,7 @@ const PostForgotPassword = async (req, res) => {
     //generating code :
     const code = generateCode();
     console.log(code);
-    user.email.verification_code = code;
+    user.email.verificationCode = code;
     await user.save();
 
     //creating json web token :
@@ -58,33 +58,33 @@ const PostForgotPassword = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.status(200).json({
-      msg: "Verification code sent to your email",
-      token: jwt_token,
-    });
-
-    //sending email :
-    // const mailOptions = {
-    //   from: process.env.MAIL_ID,
-    //   to: email,
-    //   subject: "Forgot Password",
-    //   text: `Your verification code is ${code}`,
-    // };
-
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //   if (error) {
-    //     console.log(error);
-    //     return res.status(500).json({
-    //       msg: "Internal server error",
-    //     });
-    //   } else {
-    //     console.log("Email sent: " + info.response);
-    //     res.status(200).json({
-    //       msg: "Verification code sent to your email",
-    //       token: jwt_token,
-    //     });
-    //   }
+    // res.status(200).json({
+    //   msg: "Verification code sent to your email",
+    //   token: jwt_token,
     // });
+
+    // sending email :
+    const mailOptions = {
+      from: process.env.MAIL_ID,
+      to: email,
+      subject: "Forgot Password",
+      text: `Your verification code is ${code}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        return res.status(500).json({
+          msg: "Internal server error",
+        });
+      } else {
+        console.log("Email sent: " + info.response);
+        res.status(200).json({
+          msg: "Verification code sent to your email",
+          token: jwt_token,
+        });
+      }
+    });
   }
 };
 

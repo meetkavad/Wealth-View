@@ -29,8 +29,8 @@ const checkUsername = async (req, res) => {
 
 // Signing Up :
 const PostUserSignup = async (req, res) => {
-  const { username, email, password } = req.body;
-  console.log(username, email, password);
+  const { name, email, password } = req.body;
+  console.log(name, email, password);
   //checking for the user in database , if it already exists :
   const existingUser = await UserModel.findOne({
     "email.address": email,
@@ -51,7 +51,7 @@ const PostUserSignup = async (req, res) => {
   //creating user in database :
   try {
     const user = await UserModel.create({
-      username: username,
+      name: name,
       "email.address": email,
       password: hashedPassword,
     });
@@ -82,7 +82,7 @@ const PostUserSignup = async (req, res) => {
       subject: "Wealth-View Email Verification",
       html: ` <div class="container">
                 <h1>Wealth-View Email Verification</h1>
-                <p>Hello Wealth-View User,</p>
+                <p>Hello ${name}</p>
                 <p>Below is your code for Email verification : </p>
                 <p>${email_code}</p>
                 <p>If you didn't request email Authentication, feel free to ignore this email.</p>
