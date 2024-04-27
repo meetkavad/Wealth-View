@@ -43,11 +43,6 @@ const GoalSchema = new mongoose.Schema(
       rem_date: Date,
       status: Number,
     },
-    // status: {
-    //   type: String,
-    //   required: true,
-    //   default: "pending",
-    // },
   },
   {
     timestamps: true,
@@ -55,4 +50,3 @@ const GoalSchema = new mongoose.Schema(
 );
 
 module.exports = mongoose.model("GoalModel", GoalSchema);
-

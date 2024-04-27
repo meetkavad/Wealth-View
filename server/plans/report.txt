@@ -29,22 +29,28 @@ provide all this things as a financial plan :
 
 
 
-
-
-1. questionarie for user financial and related information     
+1. questionarie for user financial and related information   
 >> different questionaries for different type of data
 >> need to prepare appropriate questions
 
 2. expense traking 
+>> add fixed expenses 
 >> name category amount date 
 >> set limit to each category
+>> expense charts : expenseChart.txt
+>> [ from open banking apis or generate random transactions ]  @optional
 
-3. goal setting
+3. goal setting  
 >> goal : [name , money , timeline , description]
 >> plan [ excel sheet ]
->> let the ai generate a plan for your goals
+>> let the ai generate a plan for your goals [line graph for comparision between actual value and planned value]
+>> special feature : retirement Planning
+>> investment options : stock , mf , fds , ppf , 
+>> retirement plan : nps , 
 
 4. personalized Recommendations : 
 >> based on user data
 >> store useful links(blogs , articles) on database only and let the ai select the appropriate link
->> 
+
+5. tools 
+>> compound interest calculator
