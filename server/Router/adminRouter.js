@@ -10,6 +10,7 @@ const {
   commoditiesRate,
   cryptoRate,
   stockNews,
+  takeQuiz,
 } = require("../Controller/adminController");
 
 // add articles and blogs urls :
@@ -22,5 +23,6 @@ adminRouter.route("/mf").post(mutualFunds);
 adminRouter.route("/cr").post(commoditiesRate);
 adminRouter.route("/crypto").post(cryptoRate);
 adminRouter.route("/news").post(stockNews);
+adminRouter.route("/quiz").get(takeQuiz);
 
 module.exports = adminRouter;

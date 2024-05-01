@@ -186,6 +186,32 @@ const stockNews = async (req, res) => {
   }
 };
 
+//  finance  quiz :
+const takeQuiz = async (req, res) => {
+  const url = "https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "fffbcc2400msh66c3cfa1c5fc343p1d7d19jsn63f36987c93e",
+      "X-RapidAPI-Host": "trivia-by-api-ninjas.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    res.status(200).json({
+      message: "data fetched succesfully",
+      news: result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "internal server error!",
+    });
+    console.error(error);
+  }
+};
+
 module.exports = {
   addUrl,
   getStockData,
@@ -194,4 +220,5 @@ module.exports = {
   commoditiesRate,
   cryptoRate,
   stockNews,
+  takeQuiz,
 };
