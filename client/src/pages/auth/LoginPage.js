@@ -3,8 +3,10 @@ import user_icon from "../../assets/person.png";
 import email_icon from "../../assets/email.png";
 import password_icon from "../../assets/password.png";
 import { colors } from "../../values/colors";
+import { useNavigate } from "react-router-dom";
 
 function LoginSignup() {
+    const navigate = useNavigate();
     const linkStyle = {
         upperDiv: {
             height: "100vh",
@@ -105,12 +107,15 @@ function LoginSignup() {
 
     const handleLogin = (e) => {
         console.log("Login");
+        navigate("/finance");
     };
     const handleSignup = (e) => {
         console.log("Signup");
+        navigate("/general-info");
     };
 
     return (
+        
         <div style={linkStyle.upperDiv}>
             <div style={linkStyle.container}>
                 <div style={linkStyle.header}>
