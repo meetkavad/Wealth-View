@@ -42,6 +42,7 @@ provide all this things as a financial plan :
 5. tools 
 >> compound interest calculator
 
+AI : personalize Recommendations section , goals section.
 
 
 

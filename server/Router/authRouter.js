@@ -20,7 +20,7 @@ authRouter.route("/signup").post(PostUserSignup);
 authRouter.route("/postcode").post(authenticateToken, PostEmailVerification);
 
 authRouter.route("/login").post(PostUserLogin);
-authRouter.route("/forgotPassword").post(authenticateToken, PostForgotPassword);
+authRouter.route("/forgotPassword").post(PostForgotPassword);
 authRouter.route("/resetPassword").post(authenticateToken, PostResetPassword);
 
 module.exports = authRouter;
