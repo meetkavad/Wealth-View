@@ -13,7 +13,7 @@ const collectMessages = async (req, res, next) => {
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = response.text();
-    console.log(text);
+    // console.log(text);
 
     var htmlContent = md.render(text);
     htmlContent = htmlContent.replace(/(?:\r\n|\r|\n)/g, "");

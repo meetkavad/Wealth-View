@@ -3,9 +3,10 @@ const expenseCategories = require("../Component/expenseCategories.js");
 
 const ExpenseSchema = new mongoose.Schema(
   {
-    username: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserModel",
+      required: true,
     },
     isFixed: {
       type: Boolean,
@@ -16,10 +17,16 @@ const ExpenseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    mode: {
+      type: String,
+      required: true,
+      enum: ["Cash", "Bank"],
+      default: "Cash",
+    },
     amount: {
       type: Number,
       required: true,
-      default: 0,
+      default: 100,
     },
     category: {
       type: String,
@@ -29,6 +36,14 @@ const ExpenseSchema = new mongoose.Schema(
     },
     description: {
       type: String,
+    },
+    is_asset: {
+      type: Boolean,
+      default: false,
+    },
+    is_liability: {
+      type: Boolean,
+      default: false,
     },
     date: {
       type: Date,

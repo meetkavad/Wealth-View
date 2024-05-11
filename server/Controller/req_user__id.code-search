@@ -1,0 +1,33 @@
+# Query: req.user._id
+# Flags: CaseSensitive RegExp
+# ContextLines: 1
+
+6 results - 4 files
+
+server\Controller\ExpenseController.js:
+  16    } = req.body;
+  17:   const userId = req.user.id;
+  18  
+
+  62      req.query;
+  63:   const userId = req.user.id;
+  64  
+
+  93  //   const { month, year } = req.query;
+  94: //   const userId = req.user.id;
+  95  //   try {
+
+server\Controller\FinanceController.js:
+  24    const { cash, bank } = req.body;
+  25:   const userId = req.user.id;
+  26  
+
+server\Controller\handleQuiz.js:
+  49    try {
+  50:     const fin = await FinanceModel.findOne({ user: req.user.id });
+  51      var knowledge = fin.knowledge;
+
+server\Controller\IncomeController.js:
+  28    const { name, start_date, end_date } = req.query;
+  29:   const userId = req.user.id;
+  30  

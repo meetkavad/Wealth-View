@@ -2,13 +2,15 @@ const mongoose = require("mongoose");
 
 const FinanceSchema = new mongoose.Schema(
   {
-    username: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserModel",
+      required: true,
     },
     cash: {
-      type: String,
+      type: Number,
       required: true,
+      default: 0,
     },
     bank: {
       type: Number,
@@ -19,11 +21,9 @@ const FinanceSchema = new mongoose.Schema(
       {
         name: {
           type: String,
-          required: true,
         },
         value: {
           type: Number,
-          required: true,
           default: 0,
         },
       },
@@ -32,15 +32,69 @@ const FinanceSchema = new mongoose.Schema(
       {
         name: {
           type: String,
-          required: true,
         },
         value: {
           type: Number,
-          required: true,
           default: 0,
         },
       },
     ],
+    knowledge: [
+      {
+        field: {
+          type: String,
+          unique: true,
+        },
+        attempted: [
+          {
+            type: mongoose.Schema.Types.ObjectId,
+          },
+        ],
+        score: {
+          type: Number,
+          default: 0,
+        },
+      },
+    ],
+    perspective: [
+      {
+        field: {
+          type: String,
+          unique: true,
+        },
+        attempted: [
+          {
+            type: mongoose.Schema.Types.ObjectId,
+          },
+        ],
+        score: {
+          type: Number,
+          default: 0,
+        },
+      },
+    ],
+    investment_preferences: {
+      stocks: {
+        Boolean,
+      },
+      sector: [
+        {
+          type: String,
+          required: function () {
+            return this.stocks;
+          },
+        },
+      ],
+      mutual_funds: {
+        Boolean,
+      },
+      Gold: {
+        Boolean,
+      },
+      fixed_returns: {
+        Boolean,
+      },
+    },
   },
   {
     timestamps: true,

@@ -4,6 +4,7 @@ const express = require("express");
 const connectDB = require("./Database/connect");
 const authRouter = require("./Router/authRouter");
 const userRouter = require("./Router/userRouter");
+
 const adminRouter = require("./Router/adminRouter");
 
 const app = express();

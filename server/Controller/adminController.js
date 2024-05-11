@@ -1,5 +1,8 @@
 const urlModel = require("../Model/UrlModel");
+const QuizModel = require("../Model/QuizModel");
 require("dotenv").config();
+
+// const historic_data = {};
 
 const addUrl = async (req, res) => {
   try {
@@ -28,8 +31,8 @@ const getStockData = async (req, res) => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": process.env.STOCK_RAPID_API_KEY,
-      "X-RapidAPI-Host": process.env.STOCK_RAPID_API_HOST,
+      "X-RapidAPI-Key": "fffbcc2400msh66c3cfa1c5fc343p1d7d19jsn63f36987c93e",
+      "X-RapidAPI-Host": "yahoo-finance127.p.rapidapi.com",
     },
   };
 
@@ -39,6 +42,34 @@ const getStockData = async (req, res) => {
     // const price = result.price.regularMarketPrice.raw;
     res.status(200).json({
       msg: "stock data fetched successfully",
+      price: result,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      msg: "Internal server error",
+    });
+  }
+};
+
+const getHistoricData = async (req, res) => {
+  // const { symbol } = req.body;
+  const symbol = "NHPC.NS";
+  const url = `https://yahoo-finance127.p.rapidapi.com/historic/${symbol}/1d/3mo`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "fffbcc2400msh66c3cfa1c5fc343p1d7d19jsn63f36987c93e",
+      "X-RapidAPI-Host": "yahoo-finance127.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    // historic_data = result;
+    res.status(200).json({
+      msg: "data fetched successfully",
       price: result,
     });
   } catch (error) {
@@ -186,29 +217,47 @@ const stockNews = async (req, res) => {
   }
 };
 
-//  finance  quiz :
-const takeQuiz = async (req, res) => {
-  const url = "https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia";
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "fffbcc2400msh66c3cfa1c5fc343p1d7d19jsn63f36987c93e",
-      "X-RapidAPI-Host": "trivia-by-api-ninjas.p.rapidapi.com",
-    },
-  };
+const addQuestions = async (req, res) => {
+  const { field, attribute } = req.body;
 
   try {
-    const response = await fetch(url, options);
-    const result = await response.json();
-    res.status(200).json({
-      message: "data fetched succesfully",
-      news: result,
-    });
+    const is_quiz = await QuizModel.findOne({ field: field });
+
+    // if quiz already exists :
+    if (is_quiz) {
+      for (const attr of attribute) {
+        const is_attr = await QuizModel.findOne({
+          field: field,
+          "attribute.name": attr.name,
+        });
+        if (is_attr) {
+          const idx = is_attr.attribute.findIndex((a) => a.name === attr.name);
+          for (const q of attr.questions) {
+            is_attr.attribute[idx].questions.push(q);
+            await is_attr.save();
+          }
+        } else {
+          is_quiz.attribute.push(attr);
+          await is_quiz.save();
+        }
+      }
+      res.status(200).json({
+        edited_quiz: is_quiz,
+      });
+    } else {
+      const new_quiz = await QuizModel.create({
+        field: field,
+        attribute: attribute,
+      });
+      res.status(200).json({
+        quiz: new_quiz,
+      });
+    }
   } catch (error) {
-    res.status(500).json({
-      message: "internal server error!",
-    });
     console.error(error);
+    res.status(500).json({
+      msg: "Internal server error",
+    });
   }
 };
 
@@ -220,5 +269,8 @@ module.exports = {
   commoditiesRate,
   cryptoRate,
   stockNews,
-  takeQuiz,
+  addQuestions,
+  getHistoricData,
 };
+
+// module.exports = historic_data;

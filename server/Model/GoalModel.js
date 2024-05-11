@@ -3,7 +3,7 @@ const currentDate = new Date();
 
 const GoalSchema = new mongoose.Schema(
   {
-    username: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserModel",
     },
@@ -19,7 +19,12 @@ const GoalSchema = new mongoose.Schema(
     description: {
       type: String,
     },
-    amount: {
+    target_amount: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    allocated_amount: {
       type: Number,
       required: true,
       default: 0,
@@ -27,21 +32,25 @@ const GoalSchema = new mongoose.Schema(
     timeline: {
       type: Date,
       required: true,
-      default: new Date(
-        currentDate.getFullYear() + 1,
-        currentDate.getMonth(),
-        currentDate.getDate()
-      ), // one year from now
     },
     date: {
       type: Date,
       required: true,
       default: currentDate,
     },
-    plan: {
-      rem_amount: Number,
-      rem_date: Date,
-      status: Number,
+    plan: [
+      {
+        index: Number,
+        task: String,
+        status: {
+          type: Boolean,
+          default: false,
+        },
+      },
+    ],
+    completion: {
+      type: Number,
+      default: 0,
     },
   },
   {

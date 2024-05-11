@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const IncomeSchema = new mongoose.Schema(
   {
-    username: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserModel",
+      required: true,
     },
     isFixed: {
       type: Boolean,
@@ -16,6 +17,7 @@ const IncomeSchema = new mongoose.Schema(
       required: function () {
         return this.isFixed;
       },
+      default: "1m",
     },
     name: {
       type: String,
