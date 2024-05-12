@@ -139,7 +139,7 @@ const postQuiz = async (req, res) => {
       };
       res.status(200).json(resObject);
     } else {
-      res.status(500).json({ message: "already attempted" });
+      res.status(200).json({ message: "already attempted" });
     }
   } catch (error) {
     console.error(error);
