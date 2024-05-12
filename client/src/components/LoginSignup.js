@@ -112,6 +112,10 @@ function LoginSignup() {
     email: "",
   });
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    navigate("/forgotPassword");
+  };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -163,10 +167,9 @@ function LoginSignup() {
       if (response.status === 200) {
         setErrorMessage("");
         localStorage.setItem("jwt_token", data.jwt_token);
-        // localStorage.setItem("OnEmailVerification", "homepage");
+        localStorage.setItem("OnEmailVerification", "homepage");
         // localStorage.setItem("userData", JSON.stringify(data.userData));
-
-        navigate(`/dashboard`);
+        navigate(`/verificationCode`);
       } else if (response.status === 409) {
         setErrorMessage(data.msg);
       } else if (response.status === 400) {
@@ -232,7 +235,7 @@ function LoginSignup() {
         </div>
 
         {/* for displaying error messages :  */}
-        <div style={{ color: "red", fontSize: "13px" }}>
+        <div style={{ color: "red", fontSize: "13px", margin: "0px auto" }}>
           <p>{errorMessage}</p>
         </div>
 
@@ -241,7 +244,10 @@ function LoginSignup() {
           <> </>
         ) : (
           <div style={linkStyle.forgotPassword}>
-            Lost Password? <span style={linkStyle.fpSpan}>Click Here!</span>
+            Lost Password?{" "}
+            <span style={linkStyle.fpSpan} onClick={handleForgotPassword}>
+              Click Here!
+            </span>
           </div>
         )}
 

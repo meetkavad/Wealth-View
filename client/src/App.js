@@ -11,6 +11,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { colors } from "./values/colors";
 import AssetsLiabilityInfo from "./components/AssetsLiabilityInfo";
 import Dashboard from "./components/DashBoard";
+import ForgotPasswordPage from "./components/ForgotPasswordPage";
+import VerificationCode from "./components/VerificationCode";
+import ResetPassword from "./components/resetPassword";
+import QuizPage from "./components/QuizPage";
 
 function App() {
   return (
@@ -50,6 +54,10 @@ function App() {
             path="/Personal_info/financial_info/AssetsLiability_info/Investment_info"
             element={<InvestmentInfo />}
           />
+          <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
+          <Route path="/verificationCode" element={<VerificationCode />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="/quiz" element={<QuizPage />} />
         </Routes>
       </BrowserRouter>
     </div>
