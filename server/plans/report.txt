@@ -1,0 +1,79 @@
+what i really want ? 
+get all the financial data of user ....
+provide all this things as a financial plan : 
+1.summary of goals 
+2.Debt Management Suggestions
+3.Investment Recommendations
+4.Savings Strategies
+5.Retirement Planning Suggestions
+6.Tax Planning Strategies
+7.Insurance Recommendations
+8.Estate Planning Suggestions
+
+
+1. questionarie for user financial and related information
+>> different questionaries for different type of data
+>> need to prepare appropriate questions
+>> 5 fields of judgement [saving , investing , budgeting , retirement planning , debt management]
+
+2. expense traking 
+>> add fixed expenses 
+>> name category amount date 
+>> set limit to each category   ----pending
+>> expense charts : expenseChart.txt
+>> [ from open banking apis or generate random transactions ]  @optional
+
+3. goal setting
+>> goal : [name , money , timeline , description] [sector,risk tolerance,]
+>> plan [ excel sheet ]
+>> let the ai generate a plan for your goals [line graph for comparision between actual value and planned value]
+>> special feature : retirement Planning
+>> investment options : stock , mf , fds , ppf , 
+>> retirement plan : nps , 
+
+--> line graph (x) 
+--> list of tasks (Y)
+--> pdf (Y)
+
+4. personalized Recommendations : 
+>> based on user data
+>> store useful links(blogs , articles) on database only and let the ai select the appropriate link
+
+5. tools 
+>> compound interest calculator
+
+AI : personalize Recommendations section , goals section.
+
+
+
+to search on internet for urls : 
+
+Budgeting and Expense Tracking Techniques
+Importance of Emergency Funds in Financial Planning
+Strategies for Effective Debt Management
+Building Wealth through Investment Planning
+Retirement Planning: Securing Your Financial Future
+Understanding Different Types of Insurance and Their Role in Financial Security
+Tax Planning Strategies to Minimize Tax Liability
+Estate Planning: Ensuring Your Legacy
+Financial Planning for Major Life Events (e.g., Marriage, Parenthood, Home Buying)
+Impact of Inflation on Financial Planning and Investment Decisions
+Importance of Financial Education and Literacy
+Sustainable and Ethical Investing: Aligning Your Investments with Your Values
+ 
+Planning for Healthcare Costs in Retirement
+Navigating Market Volatility: Tips for Successful Long-Term Investing
+
+
+
+urls : [https://www.bajajfinserv.in/investments/retirement-planning  ,https://www.livemint.com/market/stock-market-news/6-proven-strategies-for-navigating-market-volatility-stock-market-financial-goals-investments-11714020653188.html ,
+https://www.livemint.com/money/personal-finance/debt-management-3-strategies-to-pay-off-debts-and-stay-financially-healthy-151692248129205.htmll , https://www.forbes.com/sites/truetamplin/2023/09/21/financial-literacy--meaning-components-benefits--strategies/ , 
+  https://www.investopedia.com/ask/answers/what-is-inflation-and-how-should-it-affect-investing/  , https://www.tatacapital.com/blog/wealth-services/how-to-secure-your-financial-legacy/ 
+  ,https://www.investopedia.com/terms/i/insurance.asp ,https://www.forbes.com/sites/cicelyjones/2024/02/25/sustainable-investing-and-how-to-align-your-investments-to-your-values/ , 
+  https://www.investopedia.com/terms/f/financial-independence-retire-early-fire.asp , https://www.myhubble.money/blog/financial-planning-for-major-life-events , 
+  'https://aurawealth.com/blog/customized-investment-strategies-tailor-your-portfolio-with-professional-help/', 'https://www.sunshineccu.com/create-a-simple-financial-roadmap-to-stay-on-track', 'https://www.finra.org/investors/investing/investing-basics/asset-allocation-diversification', 'https://www.iciciprulife.com/investments/money-management-tips.html', 'https://www.blackrock.com/us/individual/literature/whitepaper/how-to-optimize-retirement-income.pdf', 'https://www.bajajallianz.com/blog/wp-content/uploads/2024/04/blog-15-Navigating-Healthcare-Costs-3-Essential-Tips-for-a-Stress-Free-Retirement.png?sa=X&ved=2ahUKEwj3y_rS7f2FAxWNtlYBHbrpCs8Q_B16BAgBEAI', 'https://www.livemint.com/market/stock-market-news/6-proven-strategies-for-navigating-market-volatility-stock-market-financial-goals-investments-11714020653188.html', 'https://www.investopedia.com/terms/t/tax-advantaged.asp', 'https://www.aihr.com/blog/employee-financial-wellness/', 'https://www.centralbank.net/learning-center/savings-strategies-for-college/', 'https://www.investopedia.com/terms/b/behavioralfinance.asp', 'https://www.icslearn.co.uk/blog/banking-and-finance/8-steps-to-achieve-sustainable-financial-stability/', 'https://gi-strapi.s3.ap-south-1.amazonaws.com/Blog_Infographic_1_2c7783fd14.jpg?sa=X&ved=2ahUKEwjW3pjf7f2FAxVZq1YBHYFmAHIQ_B16BAgBEAI', 'https://www.moneycontrol.com/msite/personal-finance-unlocked/article-page/emergency-planning-building-a-safety-net-for-unexpected-situations-2-11862871.html', 'https://www.linkedin.com/pulse/maximizing-legacies-navigating-tax-efficient-asset', 'https://www.financestrategists.com/uploads/Process_of_Financial_Planning_for_Entrepreneurs.png?sa=X&ved=2ahUKEwjUh6rk7f2FAxWJr1YBHffmC-AQ_B16BAgBEAI', 'https://www.quora.com/How-can-I-manage-and-invest-windfall-gains-e-g-inheritance-lottery-winnings-wisely', 'https://appreciatewealth.com/blog/six-approaches-for-mitigating-investment-risks-in-the-stock-market', 'https://www.vanguardcharitable.org/sites/default/files/2019-08/succession-plan-infographic.png?sa=X&ved=2ahUKEwit2obq7f2FAxXeklYBHVm6AzsQ_B16BAgBEAI', 'https://timesofindia.indiatimes.com/gadgets-news/5-popular-android-apps-to-help-you-manage-your-finances-better/photostory/106574040.cms'
+  ,https://www.forbes.com/advisor/in/banking/clever-ways-to-save-money/ , https://www.cnbc.com/2021/12/04/5-tips-for-saving-money-on-entertainment-expenses-as-a-college-student.html ,
+  https://www.discover.com/online-banking/banking-topics/13-ways-to-have-fun-without-spending-money/ ,]
+
+rules : ['80/20 rule' : https://www.investopedia.com/ask/answers/050115/what-are-some-reallife-examples-8020-rule-pareto-principle-practice.asp,
+            ]

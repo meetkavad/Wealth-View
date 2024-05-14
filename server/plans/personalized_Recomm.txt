@@ -1,0 +1,45 @@
+Format of Personalized Financial Advice/Recommendations
+
+1. Personalization Header:
+
+Salutation to the user (e.g., Dear [User Name])
+Summary of user's current financial situation, such as income, expenses, and goals.
+
+2. Top Recommendations:
+
+List of the most important recommendations for the day, tailored to the user's needs.
+Each recommendation should include:
+A brief description of the recommendation.
+A justification for the recommendation, explaining how it aligns with the user's financial goals.
+A call to action, such as a link to a relevant tool or resource.
+
+3. Supporting Information:
+
+If necessary, provide supplemental information to support the recommendations, such as:
+Graphs or charts illustrating financial data.
+Links to external resources (e.g., articles, calculators).
+
+4. Disclaimer:
+
+A brief statement reminding the user that the advice is not a substitute for professional financial advice.
+
+Example:
+
+Section Title: Daily Recommendations
+
+Personalization Header:Dear John,
+
+Based on your current financial situation, here are your top recommendations for today:
+
+Top Recommendations:
+
+Increase retirement savings by 2%: This will help you achieve your retirement goals faster.
+Negotiate a raise at work: Based on your performance and market data, you are likely eligible for a salary increase.
+Consolidate high-interest debt: Combine your multiple high-interest debts into one low-interest loan to reduce interest charges.
+
+Supporting Information:
+
+Graph showing current retirement savings balance and projected future balance.
+Link to a salary negotiation guide.
+Information on debt consolidation options.
+Disclaimer:The recommendations provided are for informational purposes only and do not constitute professional financial advice.
